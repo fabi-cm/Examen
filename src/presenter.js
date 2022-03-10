@@ -1,5 +1,5 @@
-import sumar from "./sumador";
-
+// import sumar from "./sumador";
+// import Validar from "./validar";
 
 const form = document.querySelector("#post-form");
 const titulo = document.querySelector("#titulo-post");
@@ -12,5 +12,13 @@ form.addEventListener("submit", (event) => {
 
   var valor_titulo = titulo.value;
   var valor_detalle = detalle.value;
-  div.innerHTML = "<p> Titulo: " + valor_titulo + " Detalle: " + valor_detalle + "</p>";
+  div.innerHTML = "<p> " + Validar(valor_titulo, valor_detalle) + "</p>";
 });
+
+function Validar(titulo, detalle){
+  if(titulo.length == 0){
+      return "Error titulo vacio";
+  }else{
+      return "titulo: " + titulo + "<br/>" + "Detalle: " + detalle;
+  }
+}
